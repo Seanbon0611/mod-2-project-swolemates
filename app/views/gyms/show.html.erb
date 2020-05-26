@@ -1,0 +1,9 @@
+<h1><%= @gym.name %></h1>
+<h2><%= @gym.address %></h2>
+<br><br>
+Coaches:<br>
+<ul>
+    <% @gym.coaches.each do |c| %>
+        <li><%= c.name %></li>
+    <% end %>
+</ul>
