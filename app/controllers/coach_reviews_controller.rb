@@ -1,2 +1,3 @@
 class CoachReviewsController < ApplicationController
+  
 end
