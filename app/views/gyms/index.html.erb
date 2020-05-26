@@ -1,0 +1,10 @@
+<h1>Gyms List:</h1>
+<ul>
+<% @gyms.each do |g| %>
+    <li><%= g.name %><br>
+    <%= g.address %><br>
+    <% g.equipments.each do |e| %>
+        <%= e.name %><br></li>
+    <% end %>
+<% end %>
+</ul>
