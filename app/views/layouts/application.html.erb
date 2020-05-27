@@ -9,7 +9,23 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
-  </body>
+  <nav>
+    <div class='header'>
+      <%= link_to "SWOLEMATES", root_path %>
+      <div class='options'>
+         <%= link_to "GYMS", gyms_path %> | 
+         <%= link_to "COACHES", coaches_path %> | 
+         <%= link_to "SIGN IN", signin_path %> | 
+         <%= link_to "SIGN UP", signup_path %> | 
+      </div>
+    </div>
+  </nav>
+
+  <div class='content'>
+    <body>
+      <h1>Swolemates - Let's Get Swole</h1>
+      
+      <%= yield %>
+    </body>
+  </div>
 </html>
