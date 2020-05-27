@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get 'logout' => "sessions#destroy", :as => "logout"
-  get 'login' => "sessions#new", :as => "login"
-  get 'signup' => "members#new", :as => "signup"
-  root :to => "members#new"
+  get '/signout', to: 'sessions#destroy'
+  get '/signin', to: 'sessions#new'
+  get '/signup', to: "members#new"
+  root :to => "sessions#new"
+  resources :sessions, only: [:create]
   resources :coach_reviews
   resources :gym_reviews
   resources :equipment, only: [:index, :show]
