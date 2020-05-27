@@ -5,11 +5,11 @@ class MembersController < ApplicationController
   end
 
   def new
-    
+    @member = Member.new
   end
 
   def create
-    
+    @member = Member.create(member_params)
   end
 
   def edit

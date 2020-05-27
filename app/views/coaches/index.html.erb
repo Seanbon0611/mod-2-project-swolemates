@@ -1,0 +1,11 @@
+<h1>Coaches: </h1>
+
+<ul>
+  <% @coaches.each do |coach| %>
+  <li>
+    Coach: <%= link_to coach.name, coach %>
+    Location: <%= link_to coach.gym.name, coach.gym %>
+  </li>
+  <br>
+  <% end %>
+</ul>

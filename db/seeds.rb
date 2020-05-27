@@ -37,6 +37,7 @@ CoachReview.destroy_all
 Membership.create(gym_id: rand(1..5), member_id: rand(1..10))
 
 GymEquipment.create(equipment_id: rand(1..10), gym_id: rand(1..5))
+GymEquipment.create(equipment_id: 1, gym_id: 1)
 
 GymReview.create(member_id: rand(1..10), gym_id: rand(1..5))
 

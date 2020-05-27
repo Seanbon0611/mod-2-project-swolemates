@@ -1,0 +1,8 @@
+<h1><%= @coach.name %></h1>
+<img src=<% @coach.img_url %>/>
+<h2><%=pluralize @coach.specialties.count, "Specialty"%>: </h2>
+
+<% @coach.specialties.each do |s| %>
+  <%= s.name %>
+  <br>
+<% end %>
