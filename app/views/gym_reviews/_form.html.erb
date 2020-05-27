@@ -1,8 +1,15 @@
 <%= form_for @gym_review do |f| %>
-<%= f.collection_select :gym_id, @gyms, :id, :name %>
-<%= f.label :rating %>
-<%= f.number_field :rating %>
-<%= f.label :content %>
-<% f.text_area :content %>
-<% #PLACEHOLDER This form should only be accessed to a user that is currently logged in. Users cannot add a review if they are not registered %>
+    <%= f.label :gym_id %>
+    <%= f.collection_select :gym_id, @gyms, :id, :name %><br>
+    <%= f.label :rating %>
+    <%= f.number_field :rating %><br>
+    <%= f.label :content %>
+    <% f.text_area :content %><br>
+    <% #PLACEHOLDER This form should only be accessed to a user that is currently logged in. Users cannot add a review if they are not registered %>
+    <%= f.submit %>
+    <% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+            <li><%= error %></li>
+        <% end %>
+    <% end %>
 <% end %>

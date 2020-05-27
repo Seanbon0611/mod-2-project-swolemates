@@ -46,13 +46,14 @@ User stories
 
 VALIDATIONS
 - Members
-    - Name, presence, numbers/symbols
-    - Age, can't be 0 
-    - Address, can't be blank
-    - Image_url, 
-- Gym Review
-    - rating, inclusion 1-5
-    - content, 10-150 character
-- Coach Review
-    - rating, inclusion 1-5
-    - content, 10-150 character
+    - Name, 
+        - X presence, 
+        - numbers/symbols
+    - X Age, can't be 0 
+    - X Address, can't be blank
+- X Gym Review
+    - X rating, inclusion 1-5
+    - X content, 10-150 character
+- X Coach Review
+    - X rating, inclusion 1-5
+    - X content, 10-150 character

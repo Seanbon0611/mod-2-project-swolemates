@@ -10,5 +10,10 @@
     <%= f.label :img_url %>: 
     <%= f.text_field :img_url %><br>
     <%= f.submit %>
+    <% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+            <li><%= error %></li>
+        <% end %>
+    <% end %>
 <% end %>
 

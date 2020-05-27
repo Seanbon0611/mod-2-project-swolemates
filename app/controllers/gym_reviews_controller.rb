@@ -10,7 +10,15 @@ class GymReviewsController < ApplicationController
   end
 
   def create
-    @gym_review = GymReview.create(gym_reveiw_params)
+    @gyms = Gym.all
+    @gym_review = GymReview.create(gym_review_params)
+    if @gym_review.valid?
+      @gym_review.save
+      redirect_to gym_review_path(@gym_review)
+    else
+      flash[:errors] = @gym_review.errors.full_messages
+      render :new
+    end
   end
 
   def update
@@ -23,7 +31,7 @@ class GymReviewsController < ApplicationController
 
   private
 
-  def gym_reveiw_params
+  def gym_review_params
     params.require(:gym_review).permit(:gym_id, :member_id, :rating, :content)
   end
 
