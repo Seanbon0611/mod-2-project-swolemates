@@ -1,5 +1,32 @@
+<img src="<%= @member.img_url %>">
 <h1><%= @member.name %></h1>
-<%= @member.email %>
-<%= @member.age %>
-<%= @member.address %>
-<%= @member.img_url %>
+<h3><%= @member.email %></h3>
+Age: <%= @member.age %><br>
+Address: <%= @member.address %>
+<br><br>
+My Gyms:<br>
+<ul>
+    <% @member.gyms.each do |g| %>
+        <li><%= link_to g.name, g %></li>
+    <% end %>
+</ul>
+My Coaches:<br>
+<ul>
+    <% @member.coaches.each do |c| %>
+        <li><%= link_to c.name, c %></li>
+    <% end %>
+</ul>
+<h2>Reviews Submitted:</h2>
+Gym Reviews:
+<ul>
+    <% @member.gym_reviews.each do |r| %>
+        <li><%= link_to r.gym.name, r.gym %></li>
+    <% end %>
+</ul>
+Coach Reviews:
+<ul>
+    <% @member.coach_reviews.each do |r| %>
+        <li><%= link_to r.coach.name, r.coach %></li>
+    <% end %>
+</ul>
+

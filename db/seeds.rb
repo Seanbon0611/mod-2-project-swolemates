@@ -14,36 +14,30 @@ Membership.destroy_all
 GymEquipment.destroy_all
 GymReview.destroy_all
 CoachReview.destroy_all
-10.times {
-  Member.create(name: Faker::Name.name, email: Faker::Internet.email, address: Faker::Address.full_address, age: rand(18..70), img_url: "www.google.com")
+20.times {
+  Member.create(name: Faker::Name.name, email: Faker::Internet.email, address: Faker::Address.full_address, age: rand(18..70), img_url: "https://picsum.photos/200")
 }
 
-5.times {
-  Gym.create(name: Faker::Company.name, address: Faker::Address.full_address, is_open: true, img_url: "www.google.com")
-}
+5.times { Gym.create(name: Faker::Company.name, address: Faker::Address.full_address, is_open: true, img_url: "https://picsum.photos/200") }
 
-6.times {
-  Coach.create(name: Faker::Esport.player, gym_id:rand(1..5), img_url: "www.google.com")
-}
+10.times { Coach.create(name: Faker::Esport.player, gym_id:rand(1..5), img_url: "https://picsum.photos/200") }
 
-10.times {
-  Equipment.create(name: Faker::Hacker.noun, img_url: "www.google.com")
-}
+20.times { Equipment.create(name: Faker::Hacker.noun, img_url: "https://picsum.photos/200") }
 
-10.times {
-  Specialty.create(name: Faker::Job.title, img_url: "www.google.com", coach_id: rand(1..6))
-}
-
-Membership.create(gym_id: rand(1..5), member_id: rand(1..10))
-
+<<<<<<< HEAD
 GymEquipment.create(equipment_id: rand(1..10), gym_id: rand(1..5))
 GymEquipment.create(equipment_id: 1, gym_id: 1)
+=======
+10.times { Specialty.create(name: Faker::Job.title, img_url: "https://picsum.photos/200", coach_id: rand(1..6)) }
+>>>>>>> 83690880fa53d8a954e2e0f8004d4a409b071cd4
 
-GymReview.create(member_id: rand(1..10), gym_id: rand(1..5))
+20.times { Membership.create(gym_id: rand(1..5), member_id: rand(1..20)) }
 
-CoachReview.create(coach_id: rand(1..6), member_id: rand(1..10))
+20.times { GymEquipment.create(equipment_id: rand(1..20), gym_id: rand(1..5)) }
 
+20.times { GymReview.create(member_id: rand(1..20), gym_id: rand(1..5), rating: rand(1..5), content: Faker::Movie.quote) }
 
+20.times { CoachReview.create(coach_id: rand(1..10), member_id: rand(1..20), rating: rand(1..5), content: Faker::Movie.quote) }
 
 
 
