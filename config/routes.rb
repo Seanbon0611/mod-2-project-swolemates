@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/signin', to: 'sessions#new'
   get '/signup', to: "members#new"
   root :to => "sessions#new"
+  resources :sessions, only: [:create]
   resources :coach_reviews
   resources :gym_reviews
   resources :equipment, only: [:index, :show]

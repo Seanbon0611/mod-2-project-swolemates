@@ -6,7 +6,7 @@ class CreateMembers < ActiveRecord::Migration[6.0]
       t.string :address
       t.integer :age
       t.string :img_url
-
+      t.string :password_digest
       t.timestamps
     end
   end

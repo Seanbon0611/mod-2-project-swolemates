@@ -3,11 +3,9 @@
 <%= render 'form' %>
 
 <% if flash[:error] %>
-  <% flash[:error].each do |message| %>
     <div style="color: red">
-      <%= message %>
+      <%= flash[:error] %>
     </div>
-  <% end %>
 <% end %>
 
 <h1>Sign Up</h1>

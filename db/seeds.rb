@@ -14,9 +14,9 @@ Membership.destroy_all
 GymEquipment.destroy_all
 GymReview.destroy_all
 CoachReview.destroy_all
-20.times {
-  Member.create(name: Faker::Name.name, email: Faker::Internet.email, address: Faker::Address.full_address, age: rand(18..70), img_url: "https://picsum.photos/200")
-}
+# 20.times {
+#   Member.create(name: Faker::Name.name, email: Faker::Internet.email, address: Faker::Address.full_address, age: rand(18..70), img_url: "https://picsum.photos/200")
+# }
 
 5.times { Gym.create(name: Faker::Company.name, address: Faker::Address.full_address, is_open: true, img_url: "https://picsum.photos/200") }
 
