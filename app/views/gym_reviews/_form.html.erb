@@ -5,4 +5,9 @@
 <%= f.label :content %>
 <% f.text_area :content %>
 <% #PLACEHOLDER This form should only be accessed to a user that is currently logged in. Users cannot add a review if they are not registered %>
+<% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+            <li><%= error %></li>
+        <% end %>
+    <% end %>
 <% end %>

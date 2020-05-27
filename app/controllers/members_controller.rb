@@ -9,7 +9,14 @@ class MembersController < ApplicationController
   end
 
   def create
-    @member = Member.create(member_params)
+    @member = Member.new(member_params)
+    if @member.valid?
+      @member.save
+      redirect_to member_path(@member)
+    else
+      flash[:errors] = @member.errors.full_messages
+      render :new
+    end
   end
 
   def edit
