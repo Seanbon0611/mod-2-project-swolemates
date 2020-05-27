@@ -1,0 +1,6 @@
+<h1>List of Equipment</h1>
+
+<% @equipments.each do |e| %>
+  <p><%= e.name %></p>
+  <img src=<%e.img_url%> />
+<% end %>

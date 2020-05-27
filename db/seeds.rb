@@ -24,7 +24,12 @@ CoachReview.destroy_all
 
 20.times { Equipment.create(name: Faker::Hacker.noun, img_url: "https://picsum.photos/200") }
 
+<<<<<<< HEAD
+GymEquipment.create(equipment_id: rand(1..10), gym_id: rand(1..5))
+GymEquipment.create(equipment_id: 1, gym_id: 1)
+=======
 10.times { Specialty.create(name: Faker::Job.title, img_url: "https://picsum.photos/200", coach_id: rand(1..6)) }
+>>>>>>> 83690880fa53d8a954e2e0f8004d4a409b071cd4
 
 20.times { Membership.create(gym_id: rand(1..5), member_id: rand(1..20)) }
 
