@@ -43,3 +43,16 @@ User stories
 - Delete
     - Delete reviews
     - Cancel Membership
+
+VALIDATIONS
+- Members
+    - Name, presence, numbers/symbols
+    - Age, can't be 0 
+    - Address, can't be blank
+    - Image_url, 
+- Gym Review
+    - rating, inclusion 1-5
+    - content, 10-150 character
+- Coach Review
+    - rating, inclusion 1-5
+    - content, 10-150 character
