@@ -1,3 +1,46 @@
-<h1>New Member:</h1>
+<%# <h1>New Member:</h1>
 
 <%= render 'form' %>
+
+<% if flash[:error] %>
+  <% flash[:error].each do |message| %>
+    <div style="color: red">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>Sign Up</h1>
+<%= form_for @member do |f| %>
+  <p>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :age %><br>
+    <%= f.number_field :age %>
+  </p>
+  <p>
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </p>
+
+  <p>
+    <%= f.label "Image URL" %><br>
+    <%= f.text_field :img_url %>
+  </p>
+
+  <p>
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation %><br>
+    <%= f.password_field :password_confirmation %>
+  </p>
+  <%= f.submit %>
+<% end %>

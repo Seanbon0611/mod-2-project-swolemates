@@ -1,3 +1,7 @@
+<% if flash[:notice] %>
+    <div style="color: red"><%= flash[:notice] %></div>
+  <% end %>
+
 <img src="<%= @member.img_url %>">
 <h1><%= @member.name %></h1>
 <h3><%= @member.email %></h3>

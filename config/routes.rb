@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'logout' => "sessions#destroy", :as => "logout"
+  get 'login' => "sessions#new", :as => "login"
+  get 'signup' => "members#new", :as => "signup"
+  root :to => "members#new"
   resources :coach_reviews
   resources :gym_reviews
   resources :equipment, only: [:index, :show]
