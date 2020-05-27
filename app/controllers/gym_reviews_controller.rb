@@ -1,4 +1,5 @@
 class GymReviewsController < ApplicationController
+  before_action :require_login
   def show
     @gym_review = GymReview.find(params[:id])
   end
@@ -24,5 +25,9 @@ class GymReviewsController < ApplicationController
 
   def gym_reveiw_params
     params.require(:gym_review).permit(:gym_id, :member_id, :rating, :content)
+  end
+
+  def require_login
+    return head(:forbidden) unless session.include? :user_id
   end
 end
