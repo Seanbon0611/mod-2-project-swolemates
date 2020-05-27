@@ -20,6 +20,8 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 25px;
+    position: fixed; 
+
     .logo-container {
       height: 100%;
       width: 70px;
@@ -37,3 +39,6 @@
       }
     }
   }
+.content {
+  margin-top: 10%;
+}

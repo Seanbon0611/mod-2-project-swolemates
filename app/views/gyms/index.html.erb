@@ -1,8 +1,10 @@
-<h1>Gyms List:</h1>
+<h1>Gym List</h1>
 <ul>
 <% @gyms.each do |g| %>
-    <li><%= g.name %><br>
+    <li><img src="<%= g.img_url %>">
+    <h2><%= link_to g.name, g %></h2>
     <%= g.address %><br>
+    <h3>Equipment Available:</h3>
     <% g.equipments.uniq.each do |e| %>
         <%= link_to e.name, e %><br></li>
     <% end %>

@@ -1,7 +1,7 @@
 <h1><%= @equipment.name %></h1>
-<img src=<% @equipment.img_url %> />
+<img src="<%= @equipment.img_url %>">
 
-<h2>Gyms that have this piece of equipment:</h2>
+<h2>Found at these gyms:</h2>
 <ul>
   <% @equipment.gyms.each do |gym| %>
     <li><%= link_to gym.name, gym %></li>
