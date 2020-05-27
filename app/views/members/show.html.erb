@@ -16,3 +16,17 @@ My Coaches:<br>
         <li><%= link_to c.name, c %></li>
     <% end %>
 </ul>
+<h2>Reviews Submitted:</h2>
+Gym Reviews:
+<ul>
+    <% @member.gym_reviews.each do |r| %>
+        <li><%= link_to r.gym.name, r.gym %></li>
+    <% end %>
+</ul>
+Coach Reviews:
+<ul>
+    <% @member.coach_reviews.each do |r| %>
+        <li><%= link_to r.coach.name, r.coach %></li>
+    <% end %>
+</ul>
+
