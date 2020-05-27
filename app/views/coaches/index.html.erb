@@ -1,11 +1,11 @@
-<h1>Coaches: </h1>
-
+<h1>Coaches List</h1>
 <ul>
-  <% @coaches.each do |coach| %>
-  <li>
-    Coach: <%= link_to coach.name, coach %>
-    Location: <%= link_to coach.gym.name, coach.gym %>
-  </li>
-  <br>
-  <% end %>
+<% @coaches.each do |c| %>
+    <li><img src="<%= c.img_url %>">
+    <h2><%= link_to c.name, c %></h2>
+    <h3>Specialties:</h3>
+    <% c.specialties.uniq.each do |s| %>
+        <%= link_to s.name, s %><br></li>
+    <% end %>
+<% end %>
 </ul>
