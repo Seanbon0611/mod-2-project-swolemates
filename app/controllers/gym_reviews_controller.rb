@@ -9,10 +9,11 @@ class GymReviewsController < ApplicationController
   end
 
   def create
+    @gyms = Gym.all
     @gym_review = GymReview.create(gym_review_params)
     if @gym_review.valid?
       @gym_review.save
-      redirect_to gym_review_path(@gym_review.gym_id)
+      redirect_to gym_review_path(@gym_review)
     else
       flash[:errors] = @gym_review.errors.full_messages
       render :new
