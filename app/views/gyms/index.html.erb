@@ -3,8 +3,8 @@
 <% @gyms.each do |g| %>
     <li><%= g.name %><br>
     <%= g.address %><br>
-    <% g.equipments.each do |e| %>
-        <%= e.name %><br></li>
+    <% g.equipments.uniq.each do |e| %>
+        <%= link_to e.name, e %><br></li>
     <% end %>
 <% end %>
 </ul>
