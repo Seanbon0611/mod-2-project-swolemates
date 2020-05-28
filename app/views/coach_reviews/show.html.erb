@@ -1,0 +1,7 @@
+<h1>Review</h1>
+<h2>Member: <%= @coach_review.member.name %></h2>
+<h2>Created at: <%= @coach_review.created_at.strftime("%B %d, %Y") %></h2>
+
+<p>Rating: <%= @coach_review.rating %></p>
+<p>Coach: <%= link_to @coach_review.coach.name, coach_path(@coach_review.coach) %></p>
+<p>Review: <%= @coach_review.content %></p>

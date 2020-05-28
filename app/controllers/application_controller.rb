@@ -16,11 +16,11 @@ class ApplicationController < ActionController::Base
   end
 
   def log_in_user(user_id)
-    session[:user_id] = user_id
+    session[:member_id] = user_id
   end
 
   def log_out_user
-    session.delete(:user_id)
+    session.delete(:member_id)
   end
 
   def logged_in?

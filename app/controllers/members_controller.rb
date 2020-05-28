@@ -14,7 +14,7 @@ class MembersController < ApplicationController
   def create
     @member = Member.create(member_params)
     if @member.valid?
-      flash[:notice] = "Signed Up! Please sign in"
+      flash[:notice] = "Signed Up! Please sign"
       redirect_to signin_path
     else
       flash[:error] = @member.errors.full_messages
@@ -24,10 +24,19 @@ class MembersController < ApplicationController
 
   def edit
     @member = Member.find(params[:id])
+    
   end
 
   def update
     @member = Member.find(params[:id])
+    @member.update_attribute(member_params)
+    if @member.valid?
+      flash[:notice] = "Profile updated!"
+      redirect_to @member
+    else
+      flash[:error] = @member.errors.full_messages
+      redirect_to edit_member_path
+    end
   end
 
   def delete
