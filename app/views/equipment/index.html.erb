@@ -1,7 +1,7 @@
 <h1>Equipment List</h1>
 <ul>
   <% @equipments.each do |e| %>
-    <li><img src="<%= e.img_url %>">
+    <li><img src="<%= e.img_url %>" height=200>
     <h2><%= link_to e.name, e %></h2></li>
   <% end %>
 </ul>

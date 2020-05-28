@@ -1,5 +1,5 @@
 <h1><%= @coach.name %></h1>
-<img src="<%= @coach.img_url %>">
+<img src="<%= @coach.img_url %>" height=400>
 <h2><%=pluralize @coach.specialties.count, "Specialty"%>: </h2>
 <ul>
 <% @coach.specialties.each do |s| %>

@@ -1,7 +1,7 @@
 <h1>Gym List</h1>
 <ul>
 <% @gyms.each do |g| %>
-    <li><img src="<%= g.img_url %>">
+    <li><img src="<%= g.img_url %>" height=200>
     <h2><%= link_to g.name, g %></h2>
     <%= g.address %><br>
     <h3>Equipment Available:</h3>

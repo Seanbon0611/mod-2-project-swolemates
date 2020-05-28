@@ -39,6 +39,6 @@
       }
     }
   }
-.content {
-  margin-top: 10%;
-}
+  body {
+    scroll-padding-top: 70px; /* height of sticky header */
+  }

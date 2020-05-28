@@ -1,11 +1,9 @@
-
-
-<img src="<%= @member.img_url %>">
+<img src="<%= @member.img_url %>" height=400>
 <h1><%= @member.name %></h1>
 <h3><%= @member.email %></h3>
 Age: <%= @member.age %><br>
 Address: <%= @member.address %>
-<br><br>
+<br>
 My Gyms:<br>
 <ul>
     <% @member.gyms.each do |g| %>
