@@ -1,8 +1,9 @@
-class MembershipsController < ApplicationsController
+class MembershipsController < ApplicationController
     def new
-      @memberships = Membership.new
+      @membership = Membership.new
     end
     def create
+      byebug
       @membership = Membership.create(memberships_params)
     end
 

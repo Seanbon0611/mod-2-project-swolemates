@@ -2,9 +2,8 @@
 <h1><%= @gym.name %></h1>
 <h2>Address: <%= @gym.address %></h2>
 <br><br>
-<h3>Rating: <%= @gym.review_rating_average %>(<%= @gym.gym_reviews.count %>)</h3>
+<h3>Rating: <%= @gym.review_rating_average %>/5 (<%= @gym.gym_reviews.count %>)</h3>
 <h3>Members: <%= @gym.memberships_count %></h3>
-<%# <h3>Rating:</h3> %>
 <h3>Coaches:</h3>
 <ul>
     <% @gym.coaches.each do |c| %>
@@ -18,5 +17,9 @@
         <li><%= link_to e.name, e %></li>
     <% end %>
 </ul>
-
+    <%= form_for @membership do |f|%>
+        <%= f.hidden_field :member_id, value: session[:member_id] %> 
+        <%= f.hidden_field :gym_id,  value: @gym.id %>
+        <%= f.submit "Enroll in this gym" %>
+    <% end%>
 <button><%= link_to "Leave a review", new_gym_review_path%></button>
