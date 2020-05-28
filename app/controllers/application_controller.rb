@@ -26,6 +26,13 @@ class ApplicationController < ActionController::Base
   def logged_in?
     !!current_user_id
   end
+
+  def authorize
+    unless logged_in?
+      flash[:error] = "You must be logged in to access this section"
+      redirect_to signin_path # halts request cycle
+    end
+  end
   
   # def current_user
   #   @current_user ||= Member.find(session[:member_id]) if session[:member_id]

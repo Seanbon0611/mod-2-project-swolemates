@@ -10,9 +10,8 @@ Rails.application.routes.draw do
   resources :members, only: [:show, :new, :create, :edit, :update, :delete]
   resources :specialties, only: [:index, :show]
   resources :coaches, only: [:index, :show]
-  resources :gyms, only: [:index, :show] do
-    resources :memberships
-  end
+  resources :gyms, only: [:index, :show, :edit, :update]
+  resources :memberships
 
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
