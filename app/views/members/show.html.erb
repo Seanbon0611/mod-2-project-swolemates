@@ -1,10 +1,10 @@
+<img src="<%= @member.img_url %>" height=400>
 
-<img src="<%= @member.img_url %>">
 <h1><%= @member.name %></h1>
 <h3><%= @member.email %></h3>
 Age: <%= @member.age %><br>
 Address: <%= @member.address %>
-<br><br>
+<br>
 My Gyms:<br>
 <ul>
     <% @member.memberships.each do |m| %>

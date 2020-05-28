@@ -30,13 +30,15 @@
   box-sizing: border-box;
   }
 
- .header {
-  height: 70px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 25px;
- }
+  .header {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  
+  
+  }
 
   .logo-container {
     height: 100%;
@@ -50,77 +52,10 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+
     
   }
-
   .option {
     padding: 10px 15px;
     cursor: pointer;
   }
-
-
-  .button {
-    min-width: 165px;
-    width: auto;
-    height: 50px;
-    letter-spacing: 0.5px;
-    line-height: 50px;
-    padding: 0 35px 0 35px;
-    font-size: 15px;
-    background-color: white;
-    color: black;
-    text-transform: uppercase;
-    font-family: 'Open Sans Condensed';
-    font-weight: bolder;
-    border: 1px solid black;
-    border-radius: 6px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-  }
-
-  .sign-up {
-    display: flex; 
-    flex-direction: column;
-    width: 380px;
-  }
-    .title {
-        margin: 10px 0;
-    }
-
-
-
-
-
-
-
-
-/* 
-//  .header {
-//     height: 70px;
-//     width: 100%;
-//     display: flex;
-//     justify-content: space-between;
-//     margin-bottom: 25px;
-//     position: fixed; 
-
-//     .logo-container {
-//       height: 100%;
-//       width: 70px;
-//       padding: 25px;
-//     }
-//     .options {
-//       width: 50%;
-//       height: 100%;
-//       display: flex;
-//       align-items: center;
-//       justify-content: flex-end;
-//       //   .option {
-//       //     padding: 10px 15px;
-//       //     cursor: pointer;
-//       // }
-//     }
-//   }
-// .content {
-//   margin-top: 10%;
-// } */
