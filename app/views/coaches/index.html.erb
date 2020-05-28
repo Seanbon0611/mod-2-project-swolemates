@@ -1,7 +1,7 @@
 <h1>Coaches List</h1>
 <ul>
 <% @coaches.each do |c| %>
-    <li><img src="<%= c.img_url %>">
+    <li><img src="<%= c.img_url %>" height=200>
     <h2><%= link_to c.name, c %></h2>
     <h3>Specialties:</h3>
     <% c.specialties.uniq.each do |s| %>

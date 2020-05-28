@@ -1,10 +1,7 @@
-<img src="<%= @gym.img_url %>">
+<img src="<%= @gym.img_url %>" height=400>
 <h1><%= @gym.name %></h1>
-<h2>Address: <%= @gym.address %></h2>
-<br><br>
-<h3>Rating: <%= @gym.review_rating_average %>(<%= @gym.gym_reviews.count %>)</h3>
-<h3>Members: <%= @gym.memberships_count %></h3>
-<%# <h3>Rating:</h3> %>
+<h2><%= @gym.address %></h2>
+<br>
 <h3>Coaches:</h3>
 <ul>
     <% @gym.coaches.each do |c| %>
