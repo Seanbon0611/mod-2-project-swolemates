@@ -2,13 +2,13 @@
 
 <%= render 'form' %>
 
+<h1>Sign Up</h1>
 <% if flash[:error] %>
     <div style="color: red">
       <%= flash[:error] %>
     </div>
 <% end %>
 
-<h1>Sign Up</h1>
 <%= form_for @member do |f| %>
   <p>
   <%= f.label :name %><br>

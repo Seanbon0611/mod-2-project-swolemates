@@ -3,7 +3,7 @@ class MembershipsController < ApplicationsController
       @memberships = Membership.new
     end
     def create
-      @membership = Membership.create
+      @membership = Membership.create(memberships_params)
     end
 
     private
