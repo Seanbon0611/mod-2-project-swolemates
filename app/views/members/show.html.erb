@@ -1,4 +1,5 @@
 <img src="<%= @member.img_url %>" height=400>
+
 <h1><%= @member.name %></h1>
 <h3><%= @member.email %></h3>
 Age: <%= @member.age %><br>
@@ -6,8 +7,8 @@ Address: <%= @member.address %>
 <br>
 My Gyms:<br>
 <ul>
-    <% @member.gyms.each do |g| %>
-        <li><%= link_to g.name, g %></li>
+    <% @member.memberships.each do |m| %>
+        <li><%= link_to m.gym.name, m.gym %></li>
     <% end %>
 </ul>
 My Coaches:<br>
@@ -29,3 +30,5 @@ Coach Reviews:
         <li><%= link_to r.coach.name, r.coach %></li>
     <% end %>
 </ul>
+
+<button><%= link_to "Edit profile", edit_member_path %></button>

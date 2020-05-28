@@ -1,0 +1,7 @@
+<h1>Review</h1>
+<h2>Member: <%= @gym_review.member.name %></h2>
+<h2>Created at: <%= link_to @gym_review.created_at.strftime("%B %d, %Y"), gym_path(@gym_review.gym) %></h2>
+
+<p>Rating: <%= @gym_review.rating %></p>
+<p>Gym: <%= @gym_review.gym.name %></p>
+<p>Review: <%= @gym_review.content %></p>

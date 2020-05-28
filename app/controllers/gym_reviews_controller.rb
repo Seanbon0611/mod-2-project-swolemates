@@ -12,12 +12,13 @@ class GymReviewsController < ApplicationController
   def create
     @gyms = Gym.all
     @gym_review = GymReview.create(gym_review_params)
+    @gym_review.member_id = current_user_id if current_user_id
     if @gym_review.valid?
       @gym_review.save
       redirect_to gym_review_path(@gym_review)
     else
       flash[:errors] = @gym_review.errors.full_messages
-      render :new
+      redirect_to new_gym_review_path
     end
   end
 
@@ -36,6 +37,9 @@ class GymReviewsController < ApplicationController
   end
 
   def require_login
-    return head(:forbidden) unless session.include? :user_id
+    unless logged_in?
+      flash[:error] = "You must be logged in to access this section"
+      redirect_to signin_path # halts request cycle
+    end
   end
 end
