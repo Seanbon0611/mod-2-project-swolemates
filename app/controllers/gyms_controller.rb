@@ -5,6 +5,7 @@ class GymsController < ApplicationController
   end
 
   def show
+    @current_user = current_user_id
     @membership = Membership.new
     @gym = Gym.find(params[:id])
   end

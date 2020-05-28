@@ -4,6 +4,7 @@ class MembersController < ApplicationController
     current_user = Member.find_by_id(session[:member_id])
   end
   def show
+    authorize
     @member = Member.find(params[:id])
   end
 
