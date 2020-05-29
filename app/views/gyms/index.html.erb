@@ -1,12 +1,19 @@
 <h1>Gym List</h1>
-<ul>
+
 <% @gyms.each do |g| %>
-    <li><img src="<%= g.img_url %>" height=200>
-    <h2><%= link_to g.name, g %></h2>
-    <%= g.address %><br>
-    <h3>Equipment Available:</h3>
-    <% g.equipments.uniq.each do |e| %>
-        <%= link_to e.name, e %><br></li>
-    <% end %>
+    <div class="ui card">
+        <a class="image" href="<%= gym_path(g) %>">
+        <img src="<%= g.img_url %>" height=200>
+        </a>
+        <div class="content">
+        <a class="header" href="<%= gym_path(g) %>"><%= g.name %></a>
+        <div class="meta">
+            <%= g.address %><br>
+            <h4>Equipment Available:</h4>
+                <% g.equipments.uniq.each do |e| %>
+                <%= link_to e.name, e %>- 
+            <% end %>
+        </div>
+        </div>
+    </div>
 <% end %>
-</ul>
