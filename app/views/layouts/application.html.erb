@@ -14,7 +14,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
     <body> 
-      <div class='header'>
+      <div class='navbar'>
         <div class="logo-container">
           <%= link_to image_tag("logo/logo_size.jpg",{:class => "logo"}),(root_path) %>
         </div>
@@ -30,6 +30,8 @@
           <%end%>
         </div>
       </div>     
+      <center>
       <%= yield %>
+    </center>
     </body>
 </html>

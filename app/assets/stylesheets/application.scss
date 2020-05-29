@@ -60,6 +60,7 @@ $main-color: black;
 body {
   font-family: 'Nunito Sans', sans-serif;
   padding: 20px 60px;
+  text-align: center;
 }
 
 a {
@@ -70,7 +71,7 @@ a {
 box-sizing: border-box;
 }
 
-.header {
+.navbar {
   height: 70px;
   width: 100%;
   display: flex;
@@ -123,4 +124,3 @@ input:not(:focus):valid ~ .sign-in-label{
   font-size: 11px;
   opacity: 1;
 }
-

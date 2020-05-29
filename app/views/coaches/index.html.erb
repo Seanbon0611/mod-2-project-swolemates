@@ -1,11 +1,18 @@
 <h1>Coaches List</h1>
-<ul>
+
 <% @coaches.each do |c| %>
-    <li><img src="<%= c.img_url %>" height=200>
-    <h2><%= link_to c.name, c %></h2>
-    <h3>Specialties:</h3>
-    <% c.specialties.uniq.each do |s| %>
-        <%= link_to s.name, s %><br></li>
-    <% end %>
+    <div class="ui card">
+        <a class="image" href="<%= coach_path(c) %>">
+        <img src="<%= c.img_url %>" height=200>
+        </a>
+        <div class="content">
+            <a class="header" href="<%= coach_path(c) %>"><%= c.name %></a>
+        <div class="meta">
+            <h4>Specialties:</h4>
+            <% c.specialties.uniq.each do |s| %>
+                <%= link_to s.name, s %><br>
+            <% end %>
+        </div>
+        </div>
+    </div>
 <% end %>
-</ul>
