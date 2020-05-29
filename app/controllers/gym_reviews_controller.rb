@@ -22,12 +22,22 @@ class GymReviewsController < ApplicationController
     end
   end
 
+  def edit
+    @gym_review = GymReview.find(params[:id])
+    @gyms = Gym.all
+  end
+
   def update
     @gym_review = GymReview.find(params[:id])
+    @gym_review.update(gym_review_params)
+    @gym_review.save
+    redirect_to gym_review_path(@gym_review)
   end
 
   def destroy
     @gym_review = GymReview.find(params[:id])
+    @gym_review.destroy
+    redirect_to gym_path(@gym_review.gym_id)
   end
 
   private

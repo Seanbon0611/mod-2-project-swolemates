@@ -5,3 +5,5 @@
 <p>Rating: <%= @gym_review.rating %></p>
 <p>Gym: <%= @gym_review.gym.name %></p>
 <p>Review: <%= @gym_review.content %></p>
+
+<%= button_to "Delete Review", gym_review_path(@gym_review), method: :delete %>
