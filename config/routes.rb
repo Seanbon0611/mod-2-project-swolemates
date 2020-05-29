@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root :to => "sessions#new"
   resources :sessions, only: [:create]
   resources :coach_reviews, only: [:show, :new, :create]
-  resources :gym_reviews, only: [:show, :new, :create]
+  resources :gym_reviews, only: [:show, :new, :create, :edit, :destroy]
   resources :equipment, only: [:index, :show]
   resources :members, only: [:show, :new, :create, :edit, :update, :delete]
   resources :specialties, only: [:index, :show]

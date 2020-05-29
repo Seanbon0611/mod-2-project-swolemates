@@ -28,6 +28,8 @@ class GymReviewsController < ApplicationController
 
   def destroy
     @gym_review = GymReview.find(params[:id])
+    @gym_review.destroy
+    redirect_to gym_path(@gym_review.gym_id)
   end
 
   private

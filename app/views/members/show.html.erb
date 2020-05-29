@@ -21,7 +21,7 @@ My Coaches:<br>
 Gym Reviews:
 <ul>
     <% @member.gym_reviews.each do |r| %>
-        <li><%= link_to r.gym.name, r.gym %></li>
+        <li><%= link_to r.gym.name, r %></li>
     <% end %>
 </ul>
 Coach Reviews:
