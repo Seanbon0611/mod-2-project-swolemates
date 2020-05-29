@@ -1,5 +1,5 @@
 class Member < ApplicationRecord
-  has_many :memberships
+  has_many :memberships, dependent: :delete_all
   has_many :gyms, through: :memberships
   has_many :gym_reviews
   has_many :gyms, through: :gym_reviews

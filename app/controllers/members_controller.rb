@@ -40,8 +40,21 @@ class MembersController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @member = Member.find(params[:id])
+    @member.memberships.each do |membership|
+      membership.destroy
+    end
+    @member.coach_reviews.each do |coach|
+      coach.destroy
+    end
+    @member.gym_reviews.each do |gym|
+      gym.destroy
+    end
+    @member.destroy
+    log_out_user
+    redirect_to signin_path
+
   end
 
   private
