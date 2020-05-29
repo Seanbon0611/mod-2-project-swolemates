@@ -30,7 +30,7 @@ class MembersController < ApplicationController
 
   def update
     @member = Member.find(params[:id])
-    @member.update_attribute(member_params)
+    @member.update_attributes(member_params)
     if @member.valid?
       flash[:notice] = "Profile updated!"
       redirect_to @member

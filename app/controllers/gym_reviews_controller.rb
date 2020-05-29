@@ -1,10 +1,10 @@
 class GymReviewsController < ApplicationController
-  before_action :require_login
   def show
     @gym_review = GymReview.find(params[:id])
   end
 
   def new
+    authorize
     @gym_review = GymReview.new
     @gyms = Gym.all
   end
@@ -23,6 +23,7 @@ class GymReviewsController < ApplicationController
   end
 
   def edit
+    authorize
     @gym_review = GymReview.find(params[:id])
     @gyms = Gym.all
   end
@@ -46,10 +47,5 @@ class GymReviewsController < ApplicationController
     params.require(:gym_review).permit(:gym_id, :member_id, :rating, :content)
   end
 
-  def require_login
-    unless logged_in?
-      flash[:error] = "You must be logged in to access this section"
-      redirect_to signin_path # halts request cycle
-    end
-  end
+
 end

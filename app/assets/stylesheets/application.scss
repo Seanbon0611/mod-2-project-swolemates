@@ -61,6 +61,8 @@ body {
   font-family: 'Nunito Sans', sans-serif;
   padding: 20px 60px;
   text-align: center;
+  position:relative ;
+  margin-bottom:100px;
 }
 
 a {
@@ -69,7 +71,7 @@ a {
 
   &:hover{
     text-decoration: none;
-    color:black
+    color: $sub-color
   }
 }
 * {
@@ -141,15 +143,20 @@ box-sizing: border-box;
   position: fixed;
   left: 0;
   bottom: 0;
-  height: 35px;
+  height: 2em;
   width: 100%;
   background-color:#e03997;
   color: white;
   text-align: center;
+  flex: 0 0 50px;
+  margin-top: auto;
 }
 
 .icon {
   padding: 10px 15px;
   cursor: pointer;
   margin-top: -10px;
+}
+.space {
+  padding: 20px;
 }
