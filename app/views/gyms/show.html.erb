@@ -4,7 +4,7 @@
 <br>
 <h3>Rating: 
     <% if @gym.gym_reviews.count > 0 %>
-        <%= @gym.review_rating_average %>/5 (<%= @gym.gym_reviews.count %>)
+        <%= @gym.review_rating_average.round(1) %>/5 (<%= @gym.gym_reviews.count %>)
     <% else %>
         <%= "No reviews for this gym yet!" %>
     <% end %>
@@ -32,10 +32,11 @@
             </div>
     </div>
 </div>
-
+<div class='buttons'>
     <%= form_for @membership do |f|%>
         <%= f.hidden_field :member_id, value: @current_user %> 
         <%= f.hidden_field :gym_id,  value: @gym.id %>
-        <%= f.submit "Enroll in this gym" %>
+        <%= f.submit "Enroll in this gym", {:class => 'ui pink button'} %>
     <% end%>
-<button><%= link_to "Leave a review", new_gym_review_path%></button>
+<%= link_to "Leave a review", new_gym_review_path,{:class => "ui pink button"}%>
+</div>

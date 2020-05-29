@@ -6,14 +6,14 @@
 <h3><%= @member.email %></h3>
 <p>Age: <%= @member.age %></p>
 <p>Address: <%= @member.address %></p>
-<br>
-<p>My Gyms:</p><br>
+
+<p>My Gyms:</p>
 <ul>
     <% @member.memberships.each do |m| %>
         <li><%= link_to m.gym.name, m.gym %></li>
     <% end %>
 </ul>
-<p>My Coaches:</p><br>
+<p>My Coaches:</p>
 <ul>
     <% @member.coaches.each do |c| %>
         <li><%= link_to c.name, c %></li>
