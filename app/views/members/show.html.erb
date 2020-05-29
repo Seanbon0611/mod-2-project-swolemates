@@ -1,36 +1,39 @@
+
+<div class='container'>
 <img src="<%= @member.img_url %>" height=400>
 
 <h1><%= @member.name %></h1>
 <h3><%= @member.email %></h3>
-Age: <%= @member.age %><br>
-Address: <%= @member.address %>
+<p>Age: <%= @member.age %></p>
+<p>Address: <%= @member.address %></p>
 <br>
-My Gyms:<br>
+<p>My Gyms:</p><br>
 <ul>
     <% @member.memberships.each do |m| %>
         <li><%= link_to m.gym.name, m.gym %></li>
     <% end %>
 </ul>
-My Coaches:<br>
+<p>My Coaches:</p><br>
 <ul>
     <% @member.coaches.each do |c| %>
         <li><%= link_to c.name, c %></li>
     <% end %>
 </ul>
 <h2>Reviews Submitted:</h2>
-Gym Reviews:
+<p>Gym Reviews:</p>
 <ul>
     <% @member.gym_reviews.each do |r| %>
         <li><%= link_to r.gym.name, r %></li>
     <% end %>
 </ul>
-Coach Reviews:
+<p>Coach Reviews:</p>
 <ul>
     <% @member.coach_reviews.each do |r| %>
         <li><%= link_to r.coach.name, r.coach %></li>
     <% end %>
 </ul>
-
-<button><%= link_to "Edit profile", edit_member_path %></button>
-
-<%= button_to "delete account", @member, :method => :delete %>
+<div class='buttons'>
+    <%= link_to "Edit profile", edit_member_path, :class => 'ui button pink' %>
+    <%= button_to "Delete Account", @member, :method => :delete, :class => 'ui button pink'%>
+</div>
+</div>

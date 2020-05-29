@@ -15,7 +15,7 @@ class MembersController < ApplicationController
   def create
     @member = Member.create(member_params)
     if @member.valid?
-      flash[:notice] = "Signed Up! Please sign"
+      flash[:notice] = "Signed Up! Please Sign In"
       redirect_to signin_path
     else
       flash[:error] = @member.errors.full_messages

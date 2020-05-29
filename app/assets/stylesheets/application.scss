@@ -66,6 +66,11 @@ body {
 a {
   text-decoration: none;
   color: black;
+
+  &:hover{
+    text-decoration: none;
+    color:black
+  }
 }
 * {
 box-sizing: border-box;
@@ -115,12 +120,36 @@ box-sizing: border-box;
   margin-top: -20px;
 }
 
+.ui-button-pink {
+  display: flex;
+  justify-content: space-between;
+}
 
-input:focus ~ .sign-in-label,
-input:not(:focus):valid ~ .sign-in-label{
-  top: 8px;
-  bottom: 10px;
-  left: 20px;
-  font-size: 11px;
-  opacity: 1;
+.container {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 35px;
+  width: 100%;
+  background-color:#e03997;
+  color: white;
+  text-align: center;
+}
+
+.icon {
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-top: -10px;
 }

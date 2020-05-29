@@ -1,6 +1,21 @@
 
 
-<% if flash[:notice] %>
+<div class='form'>
+<h1 class="title">Sign in</h1><br>
+  <%= form_tag sessions_path do %>
+    <div class='group'>
+      <%= label_tag :email, nil, class: 'shrink form-input-label' %>
+      <%= text_field_tag :email, params[:email], class: 'form-input' %>
+    </div>
+    <div class='group'>
+      <%= label_tag :password, nil, class: 'shrink form-input-label' %>
+      <%= password_field_tag :password, nil, class: 'form-input'%>
+    </div>
+    <div class='group'>
+    <%= submit_tag "Sign in", class: 'ui pink button'%>
+    </div>
+  <% end %>
+  <% if flash[:notice] %>
     <div style="color: red"><%= flash[:notice] %></div>
   <% end %>
 <% if flash[:error] %>
@@ -8,19 +23,4 @@
       <%= flash[:error] %>
     </div>
 <% end %>
-<div class='form'>
-<h1 class="title">Sign in</h1>
-  <%= form_tag sessions_path do %>
-    <div class='group'>
-      <%= label_tag :email, nil, class: 'form-input-label' %>
-      <%= text_field_tag :email, params[:email], class: 'form-input' %>
-    </div>
-    <div class='group'>
-      <%= label_tag :password, nil, class: 'form-input-label' %>
-      <%= password_field_tag :password, nil, class: 'form-input'%>
-    </div>
-    <div class='group'>
-    <%= submit_tag "Sign in", class: 'ui primary button'%>
-    </div>
-  <% end %>
 </div>
