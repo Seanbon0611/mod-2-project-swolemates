@@ -4,23 +4,32 @@
     <title>Swolemates</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-    <div class='header'>
-      <%= link_to "SWOLEMATES", root_path %>
-      <div class='option'>
-        <%= link_to "MY ACCOUNT", @member %> |
-        <%= link_to "GYMS", gyms_path %> | 
-        <%= link_to "COACHES", coaches_path %> | 
-        <%= link_to "SIGN IN", signin_path %> | 
-        <%= link_to "SIGN UP", signup_path %>
-      </div>
-    </div>
-    <body>      
+    <body> 
+      <div class='header'>
+        <div class="logo-container">
+          <%= link_to image_tag("logo/logo_size.jpg",{:class => "logo"}),(root_path) %>
+        </div>
+        <div class='options'>
+          <%= link_to "MY ACCOUNT", @member, {:class => "option"} %> 
+          <%= link_to "GYMS", gyms_path, {:class => "option"} %>  
+          <%= link_to "COACHES", coaches_path, {:class => "option"} %>  
+          <% if @logged_in%>
+            <%= link_to "SIGN OUT",  signout_path, {:class => "option"} %>
+          <%else%>
+           <%= link_to "SIGN IN", signin_path, {:class => "option"} %>  
+          <%= link_to "SIGN UP", signup_path, {:class => "option"} %>
+          <%end%>
+        </div>
+      </div>     
       <%= yield %>
     </body>
-  </div>
 </html>

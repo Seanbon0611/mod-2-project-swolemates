@@ -1,6 +1,6 @@
 class MembersController < ApplicationController
-
   def index
+    authorize
     current_user = Member.find_by_id(session[:member_id])
   end
   def show

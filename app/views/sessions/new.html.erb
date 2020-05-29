@@ -1,4 +1,4 @@
-<h1 class="title">Sign in</h1>
+
 
 <% if flash[:notice] %>
     <div style="color: red"><%= flash[:notice] %></div>
@@ -8,16 +8,19 @@
       <%= flash[:error] %>
     </div>
 <% end %>
-<div class='sign-in'>
+<div class='form'>
+<h1 class="title">Sign in</h1>
   <%= form_tag sessions_path do %>
-    <p>
-      <%= label_tag :email %><br>
-      <%= text_field_tag :email, params[:email] %>
-    </p>
-    <p>
-      <%= label_tag :password %><br>
-      <%= password_field_tag :password%>
-    </p>
-    <%= submit_tag "Sign in", :class => 'button'%>
+    <div class='group'>
+      <%= label_tag :email, nil, class: 'form-input-label' %>
+      <%= text_field_tag :email, params[:email], class: 'form-input' %>
+    </div>
+    <div class='group'>
+      <%= label_tag :password, nil, class: 'form-input-label' %>
+      <%= password_field_tag :password, nil, class: 'form-input'%>
+    </div>
+    <div class='group'>
+    <%= submit_tag "Sign in", class: 'ui primary button'%>
+    </div>
   <% end %>
 </div>
