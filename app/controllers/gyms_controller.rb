@@ -8,6 +8,7 @@ class GymsController < ApplicationController
     @current_user = current_user_id
     @membership = Membership.new
     @gym = Gym.find(params[:id])
+    @review = GymReview.find{|g|:gym_id == params[:id] && :member_id == current_user_id}
   end
 
   def edit
