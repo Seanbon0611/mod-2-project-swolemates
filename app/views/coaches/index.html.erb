@@ -10,7 +10,7 @@
         <div class="meta">
             <h4>Specialties:</h4>
             <% c.specialties.uniq.each do |s| %>
-                <%= link_to s.name, s %><br>
+                <%= s.name %><br>
             <% end %>
         </div>
         </div>
