@@ -3,7 +3,7 @@
 <h2>Created at: <%= link_to @gym_review.created_at.strftime("%B %d, %Y"), gym_path(@gym_review.gym) %></h2>
 
 <p>Rating: <%= @gym_review.rating %></p>
-<p>Gym: <%= @gym_review.gym.name %></p>
+<p>Gym: <%= link_to @gym_review.gym.name, @gym_review.gym %></p>
 <p>Review: <%= @gym_review.content %></p>
 
 <%= button_to "Delete Review", gym_review_path(@gym_review), method: :delete %>
