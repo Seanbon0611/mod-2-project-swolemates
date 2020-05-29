@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :coach_reviews, only: [:show, :new, :create]
   resources :gym_reviews, only: [:show, :new, :create]
   resources :equipment, only: [:index, :show]
-  resources :members, only: [:show, :new, :create, :edit, :update, :delete]
+  resources :members, only: [:show, :new, :create, :edit, :update, :destroy]
   resources :specialties, only: [:index, :show]
   resources :coaches, only: [:index, :show]
   resources :gyms, only: [:index, :show, :edit, :update]

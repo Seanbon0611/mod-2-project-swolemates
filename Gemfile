@@ -3,7 +3,6 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
 
-gem 'semantic-ui-sass'
 gem 'bcrypt', :require => "bcrypt"
 gem 'geocoder'
 gem 'faker'

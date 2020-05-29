@@ -8,38 +8,39 @@
       <%= flash[:error] %>
     </div>
 <% end %>
-
+<div class='sign-up'>
 <%= form_for @member do |f| %>
-  <p>
-  <%= f.label :name %><br>
-  <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :age %><br>
-    <%= f.number_field :age %>
-  </p>
-  <p>
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
-  </p>
+  <div class='group'>
+  <%= f.label :name, {:class => 'form-input-label'} %><br>
+  <%= f.text_field :name, {:class => 'form-input'} %>
+  </div>
+  <div class='group'>
+    <%= f.label :email, {:class => 'form-input-label'} %><br>
+    <%= f.text_field :email, {:class => 'form-input'} %>
+  </div>
+  <div class='group'>
+    <%= f.label :age, {:class => 'form-input-label'} %><br>
+    <%= f.number_field :age, {:class => 'form-input'} %>
+  </div>
+  <div class='group'>
+    <%= f.label :address, {:class => 'form-input-label'} %><br>
+    <%= f.text_field :address, {:class => 'form-input'} %>
+  </div>
 
-  <p>
-    <%= f.label "Image URL" %><br>
+  <div class='group'>
+    <%= f.label "Image URL", {:class => 'form-input-label'} %><br>
     <%# STRETCH GOAL: <%= f.file_field :img_url %> 
-    <%= f.text_field :img_url %>
-  </p>
+    <%= f.text_field :img_url, {:class => 'form-input'} %>
+  </div>
 
-  <p>
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
-  </p>
-  <p>
-    <%= f.label :password_confirmation %><br>
-    <%= f.password_field :password_confirmation %>
-  </p>
+  <div class='group'>
+    <%= f.label :password, {:class => 'form-input-label'} %><br>
+    <%= f.password_field :password, {:class => 'form-input'} %>
+  </div>
+  <div class='group'>
+    <%= f.label :password_confirmation, {:class => 'form-input-label'} %><br>
+    <%= f.password_field :password_confirmation, {:class => 'form-input'} %>
+  </div>
   <%= f.submit %>
 <% end %>
+</div>
