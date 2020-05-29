@@ -2,21 +2,37 @@
 <h1><%= @gym.name %></h1>
 <h2>Address: <%= @gym.address %></h2>
 <br>
-<h3>Rating: <%= @gym.review_rating_average %>/5 (<%= @gym.gym_reviews.count %>)</h3>
+<h3>Rating: 
+    <% if @gym.gym_reviews.count > 0 %>
+        <%= @gym.review_rating_average %>/5 (<%= @gym.gym_reviews.count %>)
+    <% else %>
+        <%= "No reviews for this gym yet!" %>
+    <% end %>
+    </h3>
 <h3>Members: <%= @gym.memberships_count %></h3>
-<h3>Coaches:</h3>
-<ul>
-    <% @gym.coaches.each do |c| %>
-        <li><%= link_to c.name, c %></li>
-    <% end %>
-</ul>
 
-<h3>Equipment Available:</h3>
-<ul>
-    <% @gym.equipments.uniq.each do |e| %>
-        <li><%= link_to e.name, e %></li>
-    <% end %>
-</ul>
+<div class="ui card">
+    <div class="content">
+    <h3>Coaches:</h3>
+    <div class="meta">
+        <% @gym.coaches.each do |c| %>
+        <%= link_to c.name, c %><br>
+        <% end %>
+    </div>
+    </div>
+</div>
+
+<div class="ui card">
+    <div class="content">
+        <h3>Equipment Available:</h3>
+            <div class="meta">
+                <% @gym.equipments.uniq.each do |e| %>
+                    <%= link_to e.name, e %><br>
+                <% end %>
+            </div>
+    </div>
+</div>
+
     <%= form_for @membership do |f|%>
         <%= f.hidden_field :member_id, value: @current_user %> 
         <%= f.hidden_field :gym_id,  value: @gym.id %>

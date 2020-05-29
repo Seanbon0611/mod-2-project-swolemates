@@ -3,7 +3,7 @@
 <h2><%=pluralize @coach.specialties.count, "Specialty"%>: </h2>
 <ul>
 <% @coach.specialties.each do |s| %>
-  <li><%= link_to s.name, s %></li>
+  <li><%= s.name %></li>
 <% end %>
 </ul>
 

@@ -14,7 +14,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
     <body> 
-      <div class='header'>
+      <div class='navbar'>
         <div class="logo-container">
           <%= link_to image_tag("logo/logo_size.jpg",{:class => "logo"}),(root_path) %>
         </div>
@@ -30,12 +30,17 @@
           <%end%>
         </div>
       </div>     
+      <center>
       <%= yield %>
+<<<<<<< HEAD
       <div class="footer">
         <%= link_to image_tag("icons/icons8-instagram.svg",{:class => "icon"}),(root_path) %>
         <%= link_to image_tag("icons/icons8-facebook.svg",{:class => "icon"}),(root_path) %>
         <%= link_to image_tag("icons/icons8-play-button.svg",{:class => "icon"}),(root_path) %>
         <%= link_to image_tag("icons/icons8-twitter.svg",{:class => "icon"}),(root_path) %>
       </div>
+=======
+    </center>
+>>>>>>> ac14bf1a95b1c9352304498abb1fe26d4cb58943
     </body>
 </html>
