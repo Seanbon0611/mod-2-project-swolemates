@@ -29,7 +29,7 @@
 <p>Coach Reviews:</p>
 <ul>
     <% @member.coach_reviews.each do |r| %>
-        <li><%= link_to r.coach.name, r.coach %></li>
+        <li><%= link_to r.coach.name, r %></li>
     <% end %>
 </ul>
 <div class='buttons'>
